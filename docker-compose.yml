@@ -1,0 +1,35 @@
+version: '3'
+services:
+  apimanager:
+    build:
+      context: .
+      dockerfile: "Dockerfile-apimanager"
+    ports:
+      - "8000:8000"
+    environment:
+      - TZ=America/Mexico_City
+  order_service:
+    build:
+      context: .
+      dockerfile: "Dockerfile-orderService"
+    ports:
+      - "8200:8200"
+    environment:
+      - TZ=America/Mexico_City
+  product_service:
+    build:
+      context: .
+      dockerfile: "Dockerfile-productService"
+    ports:
+      - "8300:8300"
+    environment:
+      - TZ=America/Mexico_City
+  user_service:
+    build:
+      context: .
+      dockerfile: "Dockerfile-userService"
+    ports:
+      - "8100:8100"
+    environment:
+      - TZ=America/Mexico_City
+      
